@@ -62,3 +62,13 @@ $hostname_srv - Имя хоста сервера WSUS.
 Языки
 
 Эта документация предоставляется на английском и русском языках.
+
+$TaskName = "WSUS Cleanup Task"
+
+$ScriptPath = "C:\Scripts\WSUSCleanup\WSUSCleanup.ps1"
+
+$Schedule = New-ScheduledTaskTrigger -Daily -At 2:00am
+
+$Action = New-ScheduledTaskAction -Execute "powershell.exe" -Argument "-File `"$ScriptPath`""
+
+Register-ScheduledTask -TaskName $TaskName -Trigger $Schedule -Action $Action -RunLevel Highest -User "SYSTEM"
