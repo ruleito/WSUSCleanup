@@ -63,6 +63,8 @@ $hostname_srv - Имя хоста сервера WSUS.
 
 Эта документация предоставляется на английском и русском языках.
 
+create task / создание задания
+
 $TaskName = "WSUS Cleanup Task"
 
 $ScriptPath = "C:\Scripts\WSUSCleanup\WSUSCleanup.ps1"
